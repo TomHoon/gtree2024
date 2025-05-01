@@ -6,10 +6,7 @@
   margin: 0;
 }
 
-.auto {
-  width: 1840px;
-  margin: 0 auto;
-}
+
 .auto-1080 {
   width: 1080px;
   margin: 0 auto;
@@ -33,4 +30,20 @@ button {
   cursor: pointer;
   background: none;
   border: none;
+}
+
+/* ✅ 1440px */
+@media (max-width: 1920px) {
+  .auto {
+    width: 1360px;
+    margin:0 auto;
+  }
+}
+
+/* ✅ 1920px */
+@media (min-width: 1921px) {
+  .auto {
+    width: 1840px;
+    margin: 0 auto;
+  }
 }

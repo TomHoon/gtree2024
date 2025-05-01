@@ -53,6 +53,12 @@ header {
 }
 
 /* ✅ mainVisual 시작 */
+/* .main-visual-img {
+  background-image: url('../../imgs/main-page/main-visual.png');
+  width: 1860px;
+  height: 1050px;
+  background-repeat: no-repeat;
+} */
 .main-visual-keyword {
   position: absolute;
   width: 1860px;
@@ -76,6 +82,7 @@ header {
   font-size: 24px;
   font-weight: 400;
 }
+
 
 /* ✅ mainSection 시작 */
 main .main-wrapper {
@@ -156,8 +163,10 @@ main .main-wrapper {
   color: #828282;
   font-size: 16px;
 }
-
 /* ✅ mainSection 끝 */
+
+
+
 
 /* ✅ Carousel 시작 */
 .carousel {
@@ -197,6 +206,7 @@ main .main-wrapper {
 
 /* ✅ footer 시작 */
 footer {
+  padding: 20px 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -210,3 +220,31 @@ footer ul {
 }
 
 /* ✅ footer 끝 */
+
+
+
+
+
+/* ✅ 1440px */
+@media (max-width: 1920px) {
+  .auto {
+    width: 1360px;
+    margin:0 auto;
+  }
+  .main-visual-img {
+    background-image: url('../../imgs/main-page/main-visual-1440.png');
+    width: 1360px;
+    height: 765px;
+    background-repeat: no-repeat;
+  }
+}
+
+/* ✅ 1440px */
+@media (min-width: 1921px) {
+  .main-visual-img {
+    background-image: url('../../imgs/main-page/main-visual.png');
+    width: 1860px;
+    height: 1050px;
+    background-repeat: no-repeat;
+  }
+}
