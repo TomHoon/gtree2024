@@ -1,0 +1,241 @@
+@media (min-width: 877px) and (max-width: 1920px) {
+  .mobile {
+    display: none;
+  }
+
+  /* ✅ header 시작 */
+  header {
+    width: 100%;
+    padding: 24px;
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header-container .menu-list {
+    display: flex;
+  }
+
+  .header-container .menu-list li {
+    width: 140px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .login-wrapper {
+    width: 160px;
+    display: flex;
+    font-size: 18px;
+    gap: 12px;
+  }
+
+  .login-wrapper li:first-child {
+    text-align: center;
+  }
+  .login-wrapper li:first-child button {
+    background-color: #dc995c;
+    border-radius: 30px;
+    padding: 10px 20px;
+    color: #fff;
+  }
+  .login-wrapper li:nth-child(2) {
+    width: 38px;
+  }
+  .login-wrapper li:nth-child(2) button {
+    height: 100%;
+    background-color: #dc995c;
+    padding: 10px 20px;
+    border-radius: 30px;
+  }
+  .login-wrapper li:nth-child(2) i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #fff;
+  }
+  /* ✅ header 끝 */
+
+
+
+
+ /* ✅ mainVisual 시작 */
+  .main-visual-img {
+    background-image: url("../../imgs/main-page/main-visual-1440.png");
+    width: 1360px;
+    height: 765px;
+    background-repeat: no-repeat;
+  }
+  .main-visual-keyword {
+    position: absolute;
+    width: 1860px;
+  }
+  .main-visual-container p {
+    position: absolute;
+    font-size: 46px;
+    font-weight: 700;
+    color: #fff;
+    bottom: 40px;
+    left: 50px;
+  }
+  .main-visual-container {
+    position: relative;
+  }
+  .main-visual-container img {
+    width: 1860px;
+  }
+
+  .main-visual-container span {
+    font-style: italic;
+    font-size: 24px;
+    font-weight: 400;
+  }
+  /* ✅ mainVisual 끝 */
+
+
+
+
+
+  
+  /* ✅ mainSection 시작 */
+  
+  main .main-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  .main-item {
+    display: flex;
+    flex-direction: column;
+    padding-top: 54px;
+  }
+
+  .main-item-title {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 3px solid #f7f7f7;
+    padding-bottom: 28px;
+  }
+  .main-item-title span {
+    font-weight: 700;
+    font-size: 30px;
+  }
+  .main-item-title span button {
+    color: #828282;
+    font-size: 18px;
+    background: #f7f7f7;
+    padding: 10px 20px;
+    border-radius: 30px;
+  }
+
+  .main-item-content ul {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 3px solid #f7f7f7;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .main-item-content ul li:nth-child(1) {
+    color: #828282;
+    font-size: 16px;
+    width: 80px;
+  }
+  .main-item-content ul li:nth-child(2) {
+    width: 876px;
+  }
+  .main-item-content ul li:nth-child(3) {
+    color: #828282;
+  }
+
+  .main-item .gallery-item-content {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 3px solid #f7f7f7;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .main-item .gallery-title {
+    border-bottom: none;
+  }
+
+  .gallery-item-content {
+    display: flex;
+  }
+  .gallery-item-content img {
+    width: 347px;
+    border-radius: 10px;
+  }
+
+  .magallery-item-content ul p {
+    font-size: 20px;
+  }
+  .gallery-item-content ul span {
+    color: #828282;
+    font-size: 16px;
+  }
+  /* ✅ mainSection 끝 */
+
+
+
+
+
+
+  /* ✅ Carousel 시작 */
+  .carousel {
+    padding-top: 54px;
+    height: 168px;
+  }
+  .carousel .carousel-overflow {
+    overflow: hidden;
+  }
+  .carousel ul {
+    display: flex;
+    gap: 40px;
+    animation: scroll 6s linear infinite;
+  }
+  .carousel ul img {
+    width: 180px;
+    height: 61px;
+    object-fit: contain;
+  }
+
+  .carousel-track {
+    display: flex;
+    width: max-content;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-326px);
+    }
+  }
+
+  /* ✅ Carousel 끝 */
+
+
+
+
+  /* ✅ footer 시작 */
+  footer {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 57px;
+    background: #f7f7f7;
+  }
+  footer ul {
+    display: flex;
+    color: #828282;
+    gap: 12px;
+  }
+
+  /* ✅ footer 끝 */
+}
