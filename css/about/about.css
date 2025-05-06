@@ -1,0 +1,150 @@
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 80px;
+    background-color: white;
+}
+html{
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+
+
+.about-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    scroll-margin-top: 120px;
+    min-height: 80vh;
+    padding-top: 60px;
+    box-sizing: border-box;
+}
+
+.page-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    min-height: 10vh;
+    padding-top: 80px;
+    font-weight: bold;
+    font-size: 40px;
+    color: #222222;
+
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.about-item {
+    padding: 80px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.about-item-greeting {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.greeting-img img {
+    width: 280px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.greeting-text {
+    flex: 1;
+}
+
+.greeting-text .highlight {
+    margin-bottom: 20px;
+    font-weight: 600;
+    line-height: 1.6;
+    font-size: 24px;
+    color: #DC995C;
+}
+
+.greeting-text p {
+    line-height: 1.8;
+    margin-bottom: 16px;
+    color: #474747;
+}
+
+.greeting-text .sign {
+    font-weight: bold;
+    margin-top: 24px;
+}
+
+.signature .title {
+    margin-right: 4px;
+    font-size: 16px;
+    color: #828282;
+}
+
+.signature .name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #474747;
+}
+
+
+
+
+.scroll-nav {
+    display: flex;
+    position: sticky;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1080px;
+    top: 80px;
+    padding-bottom: 24px;
+    box-sizing: border-box;
+    flex-direction: row;
+    align-items: center;
+    z-index: 9999;
+    background-color: white; 
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.scroll-nav ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 28px;
+    list-style: none;
+}
+
+.scroll-nav a {
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 18px;
+    color: #ACACAC;
+    
+}
+
+.scroll-nav a.active {
+    font-weight: bold;
+    color: #222222;
+}
+
+
+
+
+footer {
+    position: fixed;
+    flex-wrap: wrap;
+    bottom: 0;
+    padding: 0;
+    width: 100%;
+    background: #f9f9f9;
+    border-top: 1px solid #E5E5E5;
+  }
+  

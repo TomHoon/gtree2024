@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>사단법인 아름드리</title>
+    <link rel="icon" href="../../imgs/logo/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/common/common.css" />
+    <link rel="stylesheet" href="../../css/pc/style-877-1920.css" />
+    <link rel="stylesheet" href="../../css/pc/style-over-1920.css" />
+    <link rel="stylesheet" href="../../css/pc/style-under-877.css" />
+    <link rel="stylesheet" href="../../css/notion/notion.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ✅ header 시작-->
+    <header>
+      <div class="auto">
+        <ul class="header-container">
+          <li class="logo">
+            <img src="../../imgs/logo/mainLogo.png" alt="" />
+          </li>
+
+          <li>
+            <ul class="menu-list">
+              <li>기관소개</li>
+              <li>주요사업</li>
+              <li>나눔마당</li>
+              <li>알림마당</li>
+            </ul>
+          </li>
+
+          <li class="mobile">
+            <button class="menu-btn">
+              <i class="bx bx-menu"></i>
+            </button>
+          </li>
+
+          <li class="pc">
+            <ul class="login-wrapper">
+              <li>
+                <button>로그인</button>
+              </li>
+              <li>
+                <button>
+                  <i class="bx bx-search"></i>
+                </button>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <!-- ✅ header 끝-->
+
+
+    <!-- ✅ main 시작-->
+    <main>
+      <div class="auto-1080 main-wrapper">
+        <div class="page-title">알림마당</div>
+
+        <div class="notion-container">
+          <!-- 탭 메뉴 -->
+          <div class="tab-menu">
+            <ul>
+              <li data-type="notion" class="active">공지사항</li>
+              <li data-type="jobs">구인정보</li>
+              <li data-type="press">언론보도</li>
+              <li data-type="gallery">갤러리</li>
+              <li data-type="free">자유게시판</li>
+            </ul>
+          </div>
+
+          <!-- 게시판 테이블 -->
+          <div class="notion-table">
+            <table>
+              <tbody>
+                <!-- 여기에 JS로 테이블 내용이 삽입 -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 페이지네이션 -->
+        <div class="pagination">
+          <button class="first-page">&laquo;</button>
+          <button class="prev-page">&lsaquo;</button>
+        
+          <button class="page-number active">1</button>
+          <button class="page-number">2</button>
+          <button class="page-number">3</button>
+          <button class="page-number">4</button>
+        
+          <button class="next-page">&rsaquo;</button>
+          <button class="last-page">&raquo;</button>
+        </div>
+        
+      </div>
+    </main>
+
+
+
+
+    <!-- ✅  footer 시작-->
+     <footer>
+      <div class="auto">
+        <ul>
+          <li>사단법인아름드리</li>
+          <li>서울시 도봉구 도봉로127길 31-15 102호</li>
+          <li>대표 | 김준경</li>
+          <li>사업자번호 | 203-82-34102</li>
+          <li>전화 | 02-990-2310</li>
+          <li>메일 | gtree@naver.com</li>
+        </ul>
+      </div>
+     </footer>
+    <!-- ✅  footer 끝-->
+
+
+
+
+
+
+    <script src="../../js/notion/notion.js" />
+  </body>
+</html>
