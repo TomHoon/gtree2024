@@ -6,7 +6,7 @@
   /* ✅ header 시작 */
   header {
     width: 100%;
-    padding: 24px;
+    padding: 24px 0;
   }
 
   .header-container {
@@ -71,7 +71,7 @@
   }
   .main-visual-keyword {
     position: absolute;
-    width: 1860px;
+    width: 1360px;
   }
   .main-visual-container p {
     position: absolute;
