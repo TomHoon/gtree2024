@@ -3,7 +3,6 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
-    height: 80px;
     background-color: white;
 }
 html{
@@ -146,5 +145,4 @@ footer {
     width: 100%;
     background: #f9f9f9;
     border-top: 1px solid #E5E5E5;
-  }
-  
+}
