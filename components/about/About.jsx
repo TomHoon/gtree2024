@@ -1,4 +1,43 @@
+const { useRef, useEffect, useState } = React;
+
 window.About = function () {
+ const targetNodes = useRef([]);
+ const tabList = useRef(['인사말', '설립취지 및 연혁', '조직도', 'CI안내', '오시는 길']);
+ const [activeTab, setActiveTab] = useState('greeting');
+
+ useEffect(() => {
+
+  const observer = new IntersectionObserver((entries) => {
+   entries.forEach(entry => {
+    if (entry.isIntersecting) {
+     setActiveTab(entry.target.id);
+    }
+   });
+  }, { threshold: 0.1 });
+
+  targetNodes.current.forEach(el => {
+   el && observer.observe(el);
+  });
+  return () => observer.disconnect();
+
+ }, [targetNodes])
+
+ const goTab = (탭이름) => {
+  setActiveTab(탭이름);
+
+  for (let cur of targetNodes.current) {
+   if (cur.id == 탭이름) {
+    setTimeout(() => {
+     cur.scrollIntoView();
+    }, 0)
+    break;
+   }
+
+  }
+
+ }
+
+
  return (
   <main>
    <div className="auto-1080 main-wrapper">
@@ -7,15 +46,15 @@ window.About = function () {
 
     <nav className="scroll-nav">
      <ul>
-      <li><a href="#greeting">인사말</a></li>
-      <li><a href="#vision">설립취지 및 연혁</a></li>
-      <li><a href="#org">조직도</a></li>
-      <li><a href="#ci">CI 안내</a></li>
-      <li><a href="#map">오시는 길</a></li>
+      {tabList.current.map(탭이름 => (
+       <li key={탭이름} onClick={() => goTab(탭이름)}>
+        <a className={activeTab == 탭이름 ? 'active' : ''} href="#인사말">{탭이름}</a>
+       </li>
+      ))}
      </ul>
     </nav>
 
-    <section className="about-section" id="greeting">
+    <section className="about-section" id="인사말" ref={el => targetNodes.current[0] = el}>
      <div className="about-item-greeting">
       <div className="greeting-img">
        <img src="../../imgs/about-page/greeting-photo.png" alt="협회장 프로필" />
@@ -47,7 +86,7 @@ window.About = function () {
      </div>
     </section>
 
-    <section className="about-section" id="vision">
+    <section className="about-section" id="설립취지 및 연혁" ref={el => targetNodes.current[1] = el}>
      <div className="about-item-vision">
       <h2>설립취지 및 연혁</h2>
       <ul>
@@ -57,20 +96,20 @@ window.About = function () {
      </div>
     </section>
 
-    <section className="about-section" id="org">
+    <section className="about-section" id="조직도" ref={el => targetNodes.current[2] = el}>
      <div className="about-item-org">
       <h2>조직도</h2>
      </div>
     </section>
 
-    <section className="about-section" id="ci">
+    <section className="about-section" id="CI안내" ref={el => targetNodes.current[3] = el}>
      <div className="about-item-ci">
       <h2>CI 안내</h2>
       <p>아름드리의 CI</p>
      </div>
     </section>
 
-    <section className="about-section" id="map">
+    <section className="about-section" id="오시는 길" ref={el => targetNodes.current[4] = el}>
      <div className="about-item-map">
       <h2>오시는 길</h2>
      </div>
