@@ -14,12 +14,12 @@ class Router {
   pushPath(state = {}, path = '/') {
     const queryParam = new URLSearchParams(state);
     this.pageName = state.pageName;
-    window.history.pushState(state, "", `?${queryParam.toString()}`);
+    window.history.pushState(state, '', `?${queryParam.toString()}`);
   }
 
   getPath() {
     const param = new URLSearchParams(window.location.search);
-    this.pageName = param.get("pageName");
+    this.pageName = param.get('pageName');
   }
 }
 
@@ -27,39 +27,43 @@ window.$R = new Router();
 
 const App = () => {
   const [path, setPath] = React.useState('');
-  const [contentComponent, setContentComponent] = React.useState(<HomeMain/>);
+  const [contentComponent, setContentComponent] = React.useState(<HomeMain />);
 
   React.useEffect(() => {
-
-    $R.pushPath({pageName: path}, path);
+    $R.pushPath({ pageName: path }, path);
 
     console.log('..... ', contentComponent);
     console.log('..... ', $R.pageName);
 
-    switch($R.pageName) {
+    switch ($R.pageName) {
+      case 'login':
+        setContentComponent(<Login />);
+        break;
+      case 'biz':
+        console.log('biz >> ');
+        setContentComponent(<Biz />);
+        break;
       case 'about':
-        setContentComponent(<About/>);
+        setContentComponent(<About />);
         break;
       case 'notion':
-        setContentComponent(<Notion/>);
+        setContentComponent(<Notion />);
         break;
       default:
-        setContentComponent([<MainVisual/>, <HomeMain/>, <HomeCarousel />]);
+        setContentComponent([<MainVisual />, <HomeMain />, <HomeCarousel />]);
         break;
     }
-
   }, [path]);
 
   return (
     <div>
-      <Header setPath={setPath}/>
-      
+      <Header setPath={setPath} />
+
       {contentComponent}
 
-      <Footer/>
+      <Footer />
     </div>
-  )
-}
-
+  );
+};
 
 ReactDOM.createRoot(document.getElementById('root')).render(<App />);

@@ -4,7 +4,7 @@
   align-items: center;
   scroll-snap-align: start;
   min-height: 10vh;
-  padding-top: 80px;
+  padding-top: 35px;
   font-weight: bold;
   font-size: 40px;
   color: #222222;
@@ -19,7 +19,7 @@
 .tab-menu ul {
   display: flex;
   gap: 24px;
-  margin: 0;  
+  margin: 0;
   padding: 0;
   list-style: none;
   border-bottom: 1px solid #E5E5E5;
@@ -42,7 +42,9 @@
   border-collapse: collapse;
 }
 
-.notion-table th, .notion-table td {
+.notion-table th,
+.notion-table td {
+  cursor: pointer;
   padding: 14px 16px;
   text-align: left;
   vertical-align: middle;

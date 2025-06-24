@@ -1,0 +1,28 @@
+.biz-container {
+  display: flex;
+  flex-direction: column;
+  /* height: calc(100vh - 10px); */
+  gap: 50px;
+  padding-bottom: 120px;
+}
+.biz-container hr{
+  border-top: 1px dotted #000;
+}
+
+.biz-item {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.biz-item h4{
+  color: #dc995c;
+  font-size: 20px;
+}
+
+.basic-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}

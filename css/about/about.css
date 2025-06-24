@@ -1,20 +1,19 @@
 header {
-    position: fixed;
-    top: 0;
+    /* position: fixed; */
+    /* top: 0; */
     width: 100%;
     z-index: 1000;
     background-color: white;
 }
-html{
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
+
+html {
+    /* scroll-snap-type: y mandatory;
+    scroll-behavior: smooth; */
 }
 
-
-
 .about-section {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+    /* scroll-snap-align: start;
+    scroll-snap-stop: always; */
     scroll-margin-top: 120px;
     min-height: 80vh;
     padding-top: 60px;
@@ -27,7 +26,7 @@ html{
     align-items: center;
     scroll-snap-align: start;
     min-height: 10vh;
-    padding-top: 80px;
+    /* padding-top: 80px; */
     font-weight: bold;
     font-size: 40px;
     color: #222222;
@@ -53,6 +52,36 @@ html{
     padding: 0 20px;
 }
 
+.about-item-vision h2 {
+    color: rgb(97, 112, 143);
+}
+
+.about-item-vision {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.about-item-vision ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-item-vision ul li {
+    color: #333;
+    font-size: 15px;
+}
+
+.about-vision-area {
+    width: 100%;
+}
+
+.about-vision-area p {
+    font-size: 15px;
+    line-height: 30px;
+}
+
 .greeting-img img {
     width: 280px;
     border-radius: 8px;
@@ -69,6 +98,13 @@ html{
     line-height: 1.6;
     font-size: 24px;
     color: #DC995C;
+}
+
+.about-org-img {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .greeting-text p {
@@ -99,7 +135,7 @@ html{
 
 .scroll-nav {
     display: flex;
-    position: sticky;
+    /* position: sticky; */
     width: 100%;
     margin: 0 auto;
     max-width: 1080px;
@@ -109,7 +145,7 @@ html{
     flex-direction: row;
     align-items: center;
     z-index: 9999;
-    background-color: white; 
+    background-color: white;
     border-bottom: 1px solid #E5E5E5;
 }
 
@@ -126,7 +162,7 @@ html{
     transition: color 0.3s;
     font-size: 18px;
     color: #ACACAC;
-    
+
 }
 
 .scroll-nav a.active {
