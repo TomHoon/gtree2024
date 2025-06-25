@@ -36,21 +36,25 @@
   .login-wrapper li:first-child {
     text-align: center;
   }
+
   .login-wrapper li:first-child button {
     background-color: #dc995c;
     border-radius: 30px;
     padding: 10px 20px;
     color: #fff;
   }
+
   .login-wrapper li:nth-child(2) {
     width: 38px;
   }
+
   .login-wrapper li:nth-child(2) button {
     height: 100%;
     background-color: #dc995c;
     padding: 10px 20px;
     border-radius: 30px;
   }
+
   .login-wrapper li:nth-child(2) i {
     display: flex;
     justify-content: center;
@@ -58,12 +62,13 @@
     font-size: 18px;
     color: #fff;
   }
-/* ✅ header 끝 */
+
+  /* ✅ header 끝 */
 
 
 
 
-    /* ✅ mainVisual 시작 */
+  /* ✅ mainVisual 시작 */
   .main-visual-img {
     background-image: url("../../imgs/main-page/main-visual.png");
     width: 1860px;
@@ -75,12 +80,15 @@
     position: absolute;
     width: 1860px;
   }
+
   .main-visual-container {
     position: relative;
   }
+
   .main-visual-container img {
     width: 1860px;
   }
+
   .main-visual-container p {
     position: absolute;
     font-size: 46px;
@@ -89,11 +97,13 @@
     bottom: 40px;
     left: 50px;
   }
+
   .main-visual-container span {
     font-style: italic;
     font-size: 24px;
     font-weight: 400;
   }
+
   /* ✅ mainVisual 끝 */
 
 
@@ -106,6 +116,7 @@
     flex-direction: column;
     gap: 50px;
   }
+
   .main-item {
     display: flex;
     flex-direction: column;
@@ -118,10 +129,12 @@
     border-bottom: 3px solid #f7f7f7;
     padding-bottom: 28px;
   }
+
   .main-item-title span {
     font-weight: 700;
     font-size: 30px;
   }
+
   .main-item-title span button {
     color: #828282;
     font-size: 18px;
@@ -137,15 +150,18 @@
     padding-top: 16px;
     padding-bottom: 16px;
   }
+
   .main-item-content ul li:nth-child(1) {
     color: #828282;
     font-size: 16px;
     width: 80px;
   }
+
   .main-item-content ul li:nth-child(2) {
     width: 820px;
     font-weight: 600;
   }
+
   .main-item-content ul li:nth-child(3) {
     color: #828282;
   }
@@ -157,6 +173,7 @@
     padding-top: 16px;
     padding-bottom: 16px;
   }
+
   .main-item .gallery-title {
     border-bottom: none;
   }
@@ -164,22 +181,27 @@
   .gallery-item-content {
     display: flex;
   }
+
   .gallery-item-content img {
     width: 347px;
     border-radius: 10px;
   }
+
   .gallery-item-content ul {
     display: flex;
     flex-direction: column;
     width: 33.33%;
   }
+
   .magallery-item-content ul p {
     font-size: 20px;
   }
+
   .gallery-item-content ul span {
     color: #828282;
     font-size: 16px;
   }
+
   /* ✅ mainSection 끝 */
 
 
@@ -194,14 +216,17 @@
     padding-top: 54px;
     height: 168px;
   }
+
   .carousel .carousel-overflow {
     overflow: hidden;
   }
+
   .carousel ul {
     display: flex;
     gap: 40px;
     animation: scroll 6s linear infinite;
   }
+
   .carousel ul img {
     width: 180px;
     height: 61px;
@@ -229,9 +254,10 @@
 
 
 
-  
+
   /* ✅ footer 시작 */
   footer {
+    position: fixed;
     padding: 20px 30px;
     display: flex;
     justify-content: center;
@@ -239,6 +265,7 @@
     height: 57px;
     background: #f7f7f7;
   }
+
   footer ul {
     display: flex;
     color: #828282;
