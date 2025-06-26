@@ -70,7 +70,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(<App />);
 
 window.$api_url =
   window.location.hostname == 'gianttree.or.kr'
-    ? 'http://tomhoon.duckdns.org:23000'
-    : 'http://localhost:23000';
+    ? 'https://tomhoon.my:23000'
+    : 'https://localhost:23000';
 
 console.log('window.location.hostname >>> ', window.location.hostname);
