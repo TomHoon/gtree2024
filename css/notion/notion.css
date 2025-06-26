@@ -96,3 +96,41 @@
   font-weight: bold;
   color: #222;
 }
+
+
+
+/* notiondetail */
+.detail-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.detail-title {
+  font-weight: 400;
+}
+
+.profile-image img {
+  width: 36px;
+  height: 36px;
+}
+
+.profile-area ul {
+  display: flex;
+  gap: 20px;
+}
+
+.profile-subinfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-subinfo .degree {
+  color: #676767;
+  font-size: 13px;
+}
+
+.profile-subinfo .regi-date {
+  color: #676767;
+  font-size: 13px;
+}

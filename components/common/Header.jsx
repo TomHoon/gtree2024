@@ -20,7 +20,6 @@ window.Header = function Header({ path, setPath }) {
     { pageName: 'about', title: '기관소개' },
     { pageName: 'biz', title: '주요사업' },
     { pageName: 'donate', title: '연간 기부금 모금액 및 활용실적' },
-    { pageName: 'notion', title: '나눔마당' },
     { pageName: 'notion', title: '알림마당' },
   ];
   return (

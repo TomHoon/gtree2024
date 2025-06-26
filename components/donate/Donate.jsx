@@ -1,4 +1,4 @@
-window.Notion = function () {
+window.Donate = function () {
   const { useState } = React;
 
   const ITEMS_PER_PAGE = 10;

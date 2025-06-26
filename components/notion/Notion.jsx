@@ -1,4 +1,4 @@
-window.Notion = function () {
+window.Notion = function ({ setPath }) {
   const { useState } = React;
 
   const ITEMS_PER_PAGE = 10;
@@ -70,12 +70,12 @@ window.Notion = function () {
                   {tab === 'notion'
                     ? '공지사항'
                     : tab === 'jobs'
-                    ? '구인정보'
-                    : tab === 'press'
-                    ? '언론보도'
-                    : tab === 'gallery'
-                    ? '갤러리'
-                    : '자유게시판'}
+                      ? '구인정보'
+                      : tab === 'press'
+                        ? '언론보도'
+                        : tab === 'gallery'
+                          ? '갤러리'
+                          : '자유게시판'}
                 </li>
               ))}
             </ul>
@@ -104,7 +104,7 @@ window.Notion = function () {
                   [...Array(ITEMS_PER_PAGE)].map((_, i) => {
                     const row = pagedData[i];
                     return row ? (
-                      <tr key={i}>
+                      <tr key={i} onClick={() => { setPath('notionDetail') }}>
                         <td>{row[0]}</td>
                         <td>{row[1]}</td>
                         <td style={{ textAlign: 'right' }}>{row[2]}</td>
