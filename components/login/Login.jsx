@@ -1,4 +1,26 @@
-window.Login = function Login() {
+window.Login = function Login({ setPath }) {
+  const [info, setInfo] = React.useState({});
+
+  const login = async () => {
+    const res = await fetch(`${window.$api_url}/api/v1/member/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(info),
+    });
+
+    const { data } = await res.json();
+
+    if (data.로그인처리) {
+      localStorage.setItem('isLoggedIn', true);
+      setPath('/');
+    } else {
+      localStorage.setItem('isLoggedIn', false);
+      setPath('/');
+    }
+  };
+
   return (
     <main>
       <div className="auto-1080 main-wrapper">
@@ -9,12 +31,22 @@ window.Login = function Login() {
             </div>
 
             <div className="input-area">
-              <input type="text" className="userid" placeholder="아이디" />
-              <input type="password" className="userpw" placeholder="비밀번호" />
+              <input
+                type="text"
+                className="userid"
+                placeholder="아이디"
+                onChange={(e) => setInfo({ ...info, userId: e.target.value })}
+              />
+              <input
+                type="password"
+                className="userpw"
+                placeholder="비밀번호"
+                onChange={(e) => setInfo({ ...info, pw: e.target.value })}
+              />
             </div>
 
             <div className="button-area">
-              <button>로그인</button>
+              <button onClick={() => login()}>로그인</button>
             </div>
 
             <div className="social-area">

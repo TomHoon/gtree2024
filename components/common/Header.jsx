@@ -1,4 +1,21 @@
-window.Header = function Header({ setPath }) {
+window.Header = function Header({ path, setPath }) {
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+
+  React.useEffect(() => {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    console.log('isLoggedIn', isLoggedIn);
+    setIsLoggedIn(isLoggedIn);
+  }, [path]);
+
+  const logout = () => {
+    localStorage.removeItem('isLoggedIn');
+    setPath('/');
+  };
+
+  const login = () => {
+    setPath('login');
+  };
+
   const 기관소개리스트 = [
     { pageName: 'about', title: '기관소개' },
     { pageName: 'biz', title: '주요사업' },
@@ -33,7 +50,11 @@ window.Header = function Header({ setPath }) {
           <li className="pc">
             <ul className="login-wrapper">
               <li>
-                <button onClick={() => setPath('login')}>로그인</button>
+                {isLoggedIn ? (
+                  <button onClick={() => logout()}>로그아웃</button>
+                ) : (
+                  <button onClick={() => login()}>로그인</button>
+                )}
               </li>
               <li>
                 <button>

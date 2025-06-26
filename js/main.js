@@ -32,12 +32,12 @@ const App = () => {
   React.useEffect(() => {
     $R.pushPath({ pageName: path }, path);
 
-    console.log('..... ', contentComponent);
-    console.log('..... ', $R.pageName);
-
     switch ($R.pageName) {
       case 'login':
-        setContentComponent(<Login />);
+        setContentComponent(<Login setPath={setPath} />);
+        break;
+      case 'donate':
+        setContentComponent(<Donate setPath={setPath} />);
         break;
       case 'biz':
         console.log('biz >> ');
@@ -57,7 +57,7 @@ const App = () => {
 
   return (
     <div>
-      <Header setPath={setPath} />
+      <Header path={path} setPath={setPath} />
 
       {contentComponent}
 
@@ -67,3 +67,10 @@ const App = () => {
 };
 
 ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+
+window.$api_url =
+  window.location.hostname == 'gianttree.or.kr'
+    ? 'http://tomhoon.duckdns.org:23000'
+    : 'http://localhost:23000';
+
+console.log('window.location.hostname >>> ', window.location.hostname);
