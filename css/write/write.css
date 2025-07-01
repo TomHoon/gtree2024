@@ -1,0 +1,70 @@
+.write-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.write-container h5{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.write-container .editor:focus{
+  outline: none;
+}
+.editor:focus-within .placeholder {
+  display: none;
+}
+.placeholder {
+  color: #d2d2d2;
+}
+.write-container .editor{
+  width: 100%;
+  min-height: 420px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.write-container .title-area input:focus {
+  outline: none;
+}
+.write-container .title-area input {
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #d2d2d2;
+  box-sizing: border-box;
+  width: 100%;
+
+}
+.tools-area {
+  display: flex;
+  cursor: pointer;
+}
+.title-area {
+  display: flex;
+  gap: 20px;
+}
+.title-area select{
+  width: 110px;
+  height: 30px;
+  border: 1px solid #d2d2d2;
+  color: #686868;
+}
+.file-image {
+  font-size: 30px;
+  color: gray;
+}
+.button-group {
+  display: flex;
+  align-items: center;
+}
+.write-button {
+  background-color: #dc995c;
+  font-size: 20px;
+  padding: 10px 20px;
+  color: #fff;
+  margin-left: auto;
+
+}

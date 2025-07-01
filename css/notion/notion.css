@@ -74,9 +74,8 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  width: fit-content;
+  width: 100%;
   height: 36px;
-  margin: 8px auto 140px;
 }
 
 .pagination button {
@@ -133,4 +132,9 @@
 .profile-subinfo .regi-date {
   color: #676767;
   font-size: 13px;
+}
+.write-btn {
+  position: absolute;
+  right: 10%;
+  width: 70px !important;
 }

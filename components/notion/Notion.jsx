@@ -151,6 +151,7 @@ window.Notion = function ({ setPath }) {
           <button disabled={currentPage === totalPages} onClick={() => handlePageClick(totalPages)}>
             &raquo;
           </button>
+          <button className="write-btn" onClick={() => setPath('write')}>글쓰기</button>
         </div>
       </div>
     </main>

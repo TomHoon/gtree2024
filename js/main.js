@@ -38,6 +38,9 @@ const App = () => {
       case "login":
         setContentComponent(<Login setPath={setPath} />);
         break;
+      case "write":
+        setContentComponent(<Write setPath={setPath} />);
+        break;
       case "donate":
         setContentComponent(<Donate setPath={setPath} />);
         break;
