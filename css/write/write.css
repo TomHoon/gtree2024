@@ -6,12 +6,12 @@
   gap: 30px;
 }
 
-.write-container h5{
+.write-container h5 {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.write-container .editor:focus{
+.write-container .editor:focus {
   outline: none;
 }
 .editor:focus-within .placeholder {
@@ -20,7 +20,7 @@
 .placeholder {
   color: #d2d2d2;
 }
-.write-container .editor{
+.write-container .editor {
   width: 100%;
   min-height: 420px;
   padding: 10px;
@@ -36,7 +36,6 @@
   border-bottom: 1px solid #d2d2d2;
   box-sizing: border-box;
   width: 100%;
-
 }
 .tools-area {
   display: flex;
@@ -46,7 +45,7 @@
   display: flex;
   gap: 20px;
 }
-.title-area select{
+.title-area select {
   width: 110px;
   height: 30px;
   border: 1px solid #d2d2d2;
@@ -66,5 +65,9 @@
   padding: 10px 20px;
   color: #fff;
   margin-left: auto;
-
+}
+.write-image {
+  display: block;
+  width: 35rem;
+  margin: 0 auto;
 }

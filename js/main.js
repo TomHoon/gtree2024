@@ -78,7 +78,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 window.$api_url =
   window.location.hostname == "gianttree.or.kr"
     ? "https://tomhoon.my"
-    : "http://localhost:23000";
+    : "http://localhost:23001";
 
 console.log("window.location.hostname >>> ", window.location.hostname);
 
