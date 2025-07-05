@@ -62,6 +62,68 @@ window.Write = function ({ setPath }) {
         <div className="page-title">글쓰기</div>
 
         <div className="write-container">
+          {/* 제목 group */}
+          <div className="write-title-wrapper">
+            
+            <div className="write-title-item">
+              <label htmlFor="">제목</label>
+              <input type="text" className="write-title-input" />
+            </div>
+            <div className="write-writer-item">
+              <label htmlFor="">작성자</label>
+              <input type="text" className="write-writer-input" />
+            </div>
+            <div className="write-isopen-item">
+              <label htmlFor="">게시 여부</label>
+              <select name="" id="">
+                <option value="공개">공개</option>
+                <option value="비공개">비공개</option>
+              </select>
+            </div>
+
+          </div>
+
+          {/* 내용작성group */}
+          <div className="write-content-wrapper">
+            <label htmlFor="">내용작성</label>
+            <div className="editor" ref={editorRef} contentEditable></div>
+
+          </div>
+
+            {/* 첨부파일group */}
+          <div className="write-file-wrapper">
+
+
+            <label htmlFor="">첨부파일</label>
+
+            <ul className="write-file-list">
+              <li className="active">
+                <span>선택된 파일명</span>
+              </li>
+              <li>
+                <span>선택된 파일명</span>
+              </li>
+            </ul>
+
+            <div className="write-file-addbtn-group">
+              <button className="file-add-btn">파일 추가</button>
+              <button className="file-del-btn">파일 삭제</button>
+            </div>
+
+          </div>
+
+          {/* 등록취소group */}
+          <div className="write-enroll-warpper">
+            <button className="cancel-btn">취소</button>
+            <button className="enroll-btn">등록</button>
+          </div>
+
+        </div>
+      </div>
+      {/* <div className="auto-1080 main-wrapper">
+        <div className="page-title">글쓰기</div>
+
+        <div className="write-container">
           <div className="title-area">
             <select
               onChange={(e) => setParam({ ...param, category: e.target.value })}
@@ -103,7 +165,7 @@ window.Write = function ({ setPath }) {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
     </main>
   );
 };

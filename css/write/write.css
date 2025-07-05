@@ -1,4 +1,4 @@
-.write-container {
+/* .write-container {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -70,4 +70,133 @@
   display: block;
   width: 35rem;
   margin: 0 auto;
+} */
+
+
+/* DC995C */
+
+.write-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+.write-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.write-title-wrapper label{
+  display: inline-block;
+  width: 80px;
+  font-size: 16px;
+}
+.write-title-wrapper input{
+  width: 776px;
+  padding: 10px;
+  border: 1px solid #F2F2F2;
+  border-radius: 8px;
+}
+.write-title-wrapper select{
+  border: 1px solid #F2F2F2;
+  padding: 10px 13px 10px 11px;
+  border-radius: 8px;
+}
+.write-title-wrapper select option{
+  color: #666666;
+  border: 1px solid #666666;
+}
+.write-title-wrapper input:focus{
+  outline: none;
+}
+
+.write-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.write-content-wrapper .editor{ 
+  caret-color: #F2F2F2;
+  width: 856px;
+  min-height: 200px;
+  border: 1px solid #F2F2F2;
+  border-radius: 8px;
+  padding: 10px;
+}
+.write-content-wrapper .editor:focus{
+  outline: none;
+  border: 1px solid #dc9a5c66;
+}
+
+.write-file-wrapper {
+  max-width: 894px;
+  display: flex;
+  gap: 30px;
+}
+.write-file-wrapper .write-file-list{
+  box-sizing: border-box;
+  width: 636px;
+  min-height: 82px;
+  border: 1px solid #F2F2F2;
+  border-radius: 6px;
+  padding: 12px 16px;
+
+}
+
+.write-file-wrapper .write-file-addbtn-group{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+}
+.write-file-wrapper .write-file-addbtn-group button{
+  width: 120px;
+  height: 35px;
+  font-size: 14px;
+  padding: 5px 25px;
+}
+.write-file-wrapper .write-file-addbtn-group .file-add-btn{
+  background-color: #dc9a5c;
+  color: #fff;
+  border-radius: 8px;
+}
+.write-file-wrapper .write-file-addbtn-group .file-del-btn{
+  background-color: #fff;
+  border: 1px solid #dc9a5c;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+.write-file-wrapper .write-file-list {
+  color: #A6A6A6;
+}
+.write-file-wrapper .write-file-list li{
+  padding: 8px;
+
+}
+.write-file-wrapper .write-file-list .active{
+  background-color: #dc9a5c47;
+  border-radius: 6px;
+  color: #444444;
+}
+
+.write-enroll-warpper {
+  display: flex;
+  width: 894px;
+  justify-content: space-evenly;
+}
+.write-enroll-warpper button{
+  width: 184px;
+  height: 40px;
+  padding: 13px 77px;
+  border-radius: 8px;
+}
+.write-enroll-warpper .cancel-btn{
+  border: 1px solid #DC995C;
+}
+.write-enroll-warpper .enroll-btn{
+  background-color: #DC995C;
+  color: #fff;
+
 }
