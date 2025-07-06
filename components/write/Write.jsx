@@ -1,7 +1,21 @@
 window.Write = function ({ setPath }) {
-  const fileRef = React.useRef("");
-  const editorRef = React.useRef("");
-  const [param, setParam] = React.useState({ category: "자유게시판" });
+
+  const { useRef, useEffect, useState } = React;
+
+  const fileRef = useRef("");
+  const editorRef = useRef("");
+  const attachFileRef = useRef("");
+  const [param, setParam] = useState({ category: "자유게시판" });
+  const [attachedList, setAttachedList] = useState([]);
+
+  const uploadAttachFile = (e) => {
+    console.log('files >>> ', e.target.files[0]);
+    setAttachedList([...attachedList, e.target.files[0]]);
+  }
+
+  const clickAttachFileInput = (e) => {
+    attachFileRef.current.click();
+  }
 
   const addFile = () => {
     console.log("...", fileRef.current.click());
@@ -30,14 +44,24 @@ window.Write = function ({ setPath }) {
   };
 
   const goWrite = async () => {
-    console.log("param >>> ", param);
+    const formData = new FormData();
+    const jsonStr = JSON.stringify({ ...param, content: editorRef.current.innerHTML });
+
+    formData.append("board", new Blob([jsonStr], { type: "application/json" }));
+    
+    attachedList.forEach(item => {
+      formData.append("attachList", item);
+    })
+
+    console.log('attachedList >>> ', attachedList);
 
     const res = await fetch(`${window.$api_url}/api/v1/board/write`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ ...param, content: editorRef.current.innerHTML }),
+      // headers: {
+      //   "Content-Type": "multipart/form-data",
+      // },
+      // body: JSON.stringify({ ...param, content: editorRef.current.innerHTML, files: attachedList }),
+      body: formData,
     });
 
     const { status } = await res.json();
@@ -56,6 +80,7 @@ window.Write = function ({ setPath }) {
     setParam({ ...param, category: e.target.value });
   };
 
+
   return (
     <main>
       <div className="auto-1080 main-wrapper">
@@ -67,17 +92,20 @@ window.Write = function ({ setPath }) {
             
             <div className="write-title-item">
               <label htmlFor="">제목</label>
-              <input type="text" className="write-title-input" />
+              <input type="text" className="write-title-input" onChange={e => setParam({...param, title: e.target.value})}/>
             </div>
             <div className="write-writer-item">
               <label htmlFor="">작성자</label>
-              <input type="text" className="write-writer-input" />
+              <input type="text" className="write-writer-input" disabled value="관리자"/>
             </div>
             <div className="write-isopen-item">
-              <label htmlFor="">게시 여부</label>
-              <select name="" id="">
-                <option value="공개">공개</option>
-                <option value="비공개">비공개</option>
+              <label htmlFor="">카테고리</label>
+              <select name="" id="" onChange={e => setParam({...param, category: e.target.value})}>
+                <option value="공지사항">공지사항</option>
+                <option value="구인정보">구인정보</option>
+                <option value="언론보도">언론보도</option>
+                <option value="갤러리">갤러리</option>
+                <option value="자유게시판">자유게시판</option>
               </select>
             </div>
 
@@ -99,23 +127,41 @@ window.Write = function ({ setPath }) {
             <ul className="write-file-list">
               <li className="active">
                 <span>선택된 파일명</span>
+                <i class='bxr  bx-x-square image-cancel-btn'></i> 
               </li>
               <li>
                 <span>선택된 파일명</span>
+                <i class='bxr  bx-x-square image-cancel-btn'></i> 
               </li>
             </ul>
 
             <div className="write-file-addbtn-group">
-              <button className="file-add-btn">파일 추가</button>
-              <button className="file-del-btn">파일 삭제</button>
+              <input
+                type="file"
+                ref={fileRef}
+                className="file-input"
+                hidden
+                onChange={(e) => uploadFile(e)}
+              />
+              <input
+                type="file"
+                ref={attachFileRef}
+                className="file-input"
+                hidden
+                onChange={(e) => uploadAttachFile(e)}
+              />
+              {/* <i class='bxr  bx-image-plus image-add-btn' onClick={addFile}></i>  */}
+              <button className="image-add-btn2" onClick={addFile}>사진 추가</button>
+              <button className="file-add-btn" onClick={clickAttachFileInput}>파일 추가</button>
+              {/* <button className="file-del-btn">파일 삭제</button> */}
             </div>
 
           </div>
 
           {/* 등록취소group */}
           <div className="write-enroll-warpper">
-            <button className="cancel-btn">취소</button>
-            <button className="enroll-btn">등록</button>
+            <button className="cancel-btn" onClick={() => setPath('/')}>취소</button>
+            <button className="enroll-btn" onClick={goWrite}>등록</button>
           </div>
 
         </div>

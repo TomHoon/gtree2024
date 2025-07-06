@@ -73,7 +73,11 @@
 } */
 
 
-/* DC995C */
+.write-image {
+  display: block;
+  width: 35rem;
+  margin: 0 auto;
+} 
 
 .write-container {
   display: flex;
@@ -119,7 +123,9 @@
 .write-content-wrapper .editor{ 
   caret-color: #F2F2F2;
   width: 856px;
+  max-height: 800px;
   min-height: 200px;
+  overflow-y: scroll;
   border: 1px solid #F2F2F2;
   border-radius: 8px;
   padding: 10px;
@@ -161,19 +167,43 @@
   color: #fff;
   border-radius: 8px;
 }
-.write-file-wrapper .write-file-addbtn-group .file-del-btn{
+.write-file-wrapper .write-file-addbtn-group .file-del-btn, .image-add-btn2{
   background-color: #fff;
   border: 1px solid #dc9a5c;
   font-weight: 500;
   border-radius: 8px;
 }
+.write-file-wrapper .write-file-addbtn-group .image-add-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  font-size: 30px;
+  /* color: #776d6d; */
+  color: #dc9a5cc8;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+.write-file-wrapper .write-file-addbtn-group .image-add-btn:hover{
+  transform: scale(1.02);
+  color: #dc9a5c;
+}
 
+.image-cancel-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+    color: #8c8986;
+}
 .write-file-wrapper .write-file-list {
   color: #A6A6A6;
 }
 .write-file-wrapper .write-file-list li{
+  position: relative;
   padding: 8px;
-
+  display: flex;
+  justify-content: space-between;
 }
 .write-file-wrapper .write-file-list .active{
   background-color: #dc9a5c47;

@@ -12,6 +12,9 @@ window.Login = function Login({ setPath }) {
 
     const { data } = await res.json();
 
+    console.log('data.로그인처리 >> >', data.로그인처리)
+    console.log('data >> >', data)
+
     if (data.로그인처리) {
       localStorage.setItem('isLoggedIn', true);
       setPath('/');

@@ -72,9 +72,14 @@ window.Notion = function ({ setPath }) {
     free: [],
   };
 
-  const [currentTab, setCurrentTab] = useState("notion");
+  const tabs = [
+    '공지사항', '구인정보', '언론보도', '갤러리', '자유게시판'
+  ];
+
+  const [currentTab, setCurrentTab] = useState("공지사항");
   const [currentPage, setCurrentPage] = useState(1);
   const [boardList, setBoardList] = useState([]);
+  const [filteredList, setFilteredList] = useState([]);
 
   const currentList = tableData[currentTab] || [];
   const totalPages = Math.ceil(currentList.length / ITEMS_PER_PAGE);
@@ -83,14 +88,22 @@ window.Notion = function ({ setPath }) {
     currentPage * ITEMS_PER_PAGE
   );
 
-  useEffect(async () => {
-    const res = await fetch(`${window.$api_url}/api/v1/board/getBoardAll`);
-    const { data } = await res.json();
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch(`${window.$api_url}/api/v1/board/getBoardAll`);
+      const { data } = await res.json();
 
-    setBoardList([...data]);
+      setBoardList([...data]);
+    }
 
-    console.log("data >>> ", data);
+    fetchData();
   }, []);
+
+  useEffect(() => {
+    const filtered = boardList.filter(item => item.category === currentTab);
+    setFilteredList([...filtered]);
+  }, [currentTab]);
+
 
   const handleTabClick = (tab) => {
     setCurrentTab(tab);
@@ -110,24 +123,17 @@ window.Notion = function ({ setPath }) {
         <div className="notion-container">
           <div className="tab-menu">
             <ul>
-              {Object.keys(tableData).map((tab) => (
-                <li
-                  key={tab}
-                  data-type={tab}
-                  className={tab === currentTab ? "active" : ""}
-                  onClick={() => handleTabClick(tab)}
-                >
-                  {tab === "notion"
-                    ? "공지사항"
-                    : tab === "jobs"
-                    ? "구인정보"
-                    : tab === "press"
-                    ? "언론보도"
-                    : tab === "gallery"
-                    ? "갤러리"
-                    : "자유게시판"}
-                </li>
-              ))}
+              {
+                tabs.map(tab => (
+                  <li
+                    key={tab}
+                    data-type={tab}
+                    className={tab === currentTab ? "active" : ""}
+                    onClick={() => handleTabClick(tab)}
+                  >
+                    {tab}
+                  </li>
+                ))}
             </ul>
           </div>
 
@@ -135,7 +141,7 @@ window.Notion = function ({ setPath }) {
           <div className="notion-table">
             <table>
               <tbody>
-                {pagedData.length === 0 ? (
+                {filteredList.length === 0 ? (
                   <React.Fragment>
                     <tr>
                       <td
@@ -154,7 +160,7 @@ window.Notion = function ({ setPath }) {
                     ))}
                   </React.Fragment>
                 ) : (
-                  boardList.map((item, idx) => {
+                  filteredList.map((item, idx) => {
                     return item ? (
                       <tr
                         key={idx}
@@ -165,7 +171,7 @@ window.Notion = function ({ setPath }) {
                         <td>{item.category}</td>
                         <td>{item.title}</td>
                         <td style={{ textAlign: "right" }}>
-                          {item.createdDate || "2025.07.01"}
+                          {item.createdAt || "2025.07.01"}
                         </td>
                       </tr>
                     ) : (
@@ -219,9 +225,12 @@ window.Notion = function ({ setPath }) {
           >
             &raquo;
           </button>
-          <button className="write-btn" onClick={() => setPath("write")}>
+            {
+              localStorage.getItem('isLoggedIn') &&  (<button className="write-btn" onClick={() => setPath("write")}>
             글쓰기
-          </button>
+          </button>)
+            }
+          
         </div>
       </div>
     </main>

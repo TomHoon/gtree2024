@@ -87,3 +87,7 @@ window.addEventListener('popstate', e => {
   const pageName = params.get('pageName');
   setPath(pageName || '');
 });
+
+setTimeout(() => {
+  setPath('write')
+}, 1500)
