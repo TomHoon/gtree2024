@@ -165,7 +165,7 @@ window.Notion = function ({ setPath }) {
                       <tr
                         key={idx}
                         onClick={() => {
-                          setPath("notionDetail");
+                          setPath("detail");
                         }}
                       >
                         <td>{item.category}</td>

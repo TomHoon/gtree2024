@@ -124,7 +124,7 @@ window.Donate = function () {
                   [...Array(ITEMS_PER_PAGE)].map((_, i) => {
                     const row = pagedData[i];
                     return row ? (
-                      <tr key={i}>
+                      <tr key={i} onClick={() => setPath('detail')}>
                         <td>{row[0]}</td>
                         <td>{row[1]}</td>
                         <td style={{ textAlign: "right" }}>{row[2]}</td>

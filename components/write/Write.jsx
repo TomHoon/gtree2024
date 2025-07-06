@@ -44,8 +44,10 @@ window.Write = function ({ setPath }) {
   };
 
   const goWrite = async () => {
+    const writer = localStorage.getItem('loginId');
+
     const formData = new FormData();
-    const jsonStr = JSON.stringify({ ...param, content: editorRef.current.innerHTML });
+    const jsonStr = JSON.stringify({ ...param, content: editorRef.current.innerHTML, writer });
 
     formData.append("board", new Blob([jsonStr], { type: "application/json" }));
     
@@ -53,14 +55,8 @@ window.Write = function ({ setPath }) {
       formData.append("attachList", item);
     })
 
-    console.log('attachedList >>> ', attachedList);
-
     const res = await fetch(`${window.$api_url}/api/v1/board/write`, {
       method: "POST",
-      // headers: {
-      //   "Content-Type": "multipart/form-data",
-      // },
-      // body: JSON.stringify({ ...param, content: editorRef.current.innerHTML, files: attachedList }),
       body: formData,
     });
 
@@ -72,8 +68,6 @@ window.Write = function ({ setPath }) {
       alert("서버 에러");
     }
 
-    console.log(editorRef.current.innerHTML);
-    console.log(param);
   };
 
   const changeA = (e) => {

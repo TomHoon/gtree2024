@@ -17,6 +17,7 @@ window.Login = function Login({ setPath }) {
 
     if (data.로그인처리) {
       localStorage.setItem('isLoggedIn', true);
+      localStorage.setItem('loginId', info.userId);
       setPath('/');
     } else {
       localStorage.setItem('isLoggedIn', false);

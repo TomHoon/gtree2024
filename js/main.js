@@ -44,8 +44,8 @@ const App = () => {
       case "donate":
         setContentComponent(<Donate setPath={setPath} />);
         break;
-      case "notionDetail":
-        setContentComponent(<NotionDetail setPath={setPath} />);
+      case "detail":
+        setContentComponent(<Detail setPath={setPath} />);
         break;
       case "biz":
         setContentComponent(<Biz />);
@@ -89,5 +89,5 @@ window.addEventListener('popstate', e => {
 });
 
 setTimeout(() => {
-  setPath('write')
+  setPath('detail')
 }, 1500)

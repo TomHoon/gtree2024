@@ -108,19 +108,33 @@
   font-weight: 400;
 }
 
+.profile-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-area-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
 .profile-image img {
   width: 36px;
   height: 36px;
 }
 
-.profile-area ul {
-  display: flex;
-  gap: 20px;
-}
-
 .profile-subinfo {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+}
+.profile-subinfo li{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .profile-subinfo .degree {
@@ -138,3 +152,6 @@
   position: absolute;
   right: 0px;
 }
+
+
+/* detail */
