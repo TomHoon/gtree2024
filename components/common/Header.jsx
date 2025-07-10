@@ -55,11 +55,11 @@ window.Header = function Header({ path, setPath }) {
                   <button onClick={() => login()}>로그인</button>
                 )}
               </li>
-              <li>
+              {/* <li>
                 <button>
                   <i className="bx bx-search"></i>
                 </button>
-              </li>
+              </li> */}
             </ul>
           </li>
         </ul>
